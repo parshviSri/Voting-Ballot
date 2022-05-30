@@ -34,13 +34,13 @@ const candidates=[{
 ]
 export default function Home() {
   const ref = useRef([]);
-  const chairpersonAddress= "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
+  const chairpersonAddress= "0x7Fe0E7Fe50dBDF687d9568843A92E874c0C4Eda5";
   const[voterAccount,setVoterAccount] = useState('');
   const[errorMessage,setErrorMessage] = useState('');
   const [successMessage,setSuccessmessage] =useState('');
   const[succ,setSucc]= useState(false);
   const[isOwner,setOwner] = useState(false);
-  const voterList=["0x70997970C51812dc3A010C7d01b50e0d17dc79C8","0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"]
+  const voterList=["0xE37E815ccB1708b95FE8314c996A52f6b02A478c","0x56DDDb6D9cDcC9F0B313cB9EeE54647e8c53F13a"]
   useEffect(()=>{
     
     connectWallet();
@@ -85,7 +85,7 @@ export default function Home() {
     try{
       const accounts = await window.ethereum.request({method:"eth_accounts"});
 
-      const contractAddress="0x5fbdb2315678afecb367f032d93f642f64180aa3";
+      const contractAddress="0x922a7B066a9F0682e48f8108e728AaB8C0e2b8dE";
      
       const provider = new ethers.providers.Web3Provider(window.ethereum);
      const signer  = provider.getSigner();
@@ -108,7 +108,7 @@ export default function Home() {
   }
   const vote = async(id) =>{
     try{
-      const contractAddress="0x5FbDB2315678afecb367f032d93F642f64180aa3";
+      const contractAddress="0x922a7B066a9F0682e48f8108e728AaB8C0e2b8dE";
     const provider = new ethers.providers.Web3Provider(window.ethereum);
      const signer  = provider.getSigner();
     const contract = new ethers.Contract(contractAddress,ballot.abi,signer);
@@ -129,7 +129,7 @@ export default function Home() {
   }
   const winner = async() =>{
     try{
-      const contractAddress="0x5FbDB2315678afecb367f032d93F642f64180aa3";
+      const contractAddress="0x922a7B066a9F0682e48f8108e728AaB8C0e2b8dE";
     const provider = new ethers.providers.Web3Provider(window.ethereum);
      const signer  = provider.getSigner();
     const contract = new ethers.Contract(contractAddress,ballot.abi,signer);
@@ -150,7 +150,7 @@ export default function Home() {
   }
   const callWinner = async() =>{
     try{
-      const contractAddress="0x5FbDB2315678afecb367f032d93F642f64180aa3";
+      const contractAddress="0x922a7B066a9F0682e48f8108e728AaB8C0e2b8dE";
     const provider = new ethers.providers.Web3Provider(window.ethereum);
      const signer  = provider.getSigner();
     const contract = new ethers.Contract(contractAddress,ballot.abi,signer);
